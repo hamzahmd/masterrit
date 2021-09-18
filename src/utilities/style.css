@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@800;900&display=swap");
+
+.grounded-radiants {
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 30px;
+  background: white;
+  background-clip: padding-box;
+  padding: 14px 22px;
+  text-align: center;
+  height: 48px;
+  min-width: 133px;
+  max-width: 335px;
+  font-size: 16px;
+  line-height: 20px;
+  left: 0px;
+  right: 0px;
+  color: #2b2b2b;
+  font-family: Mulish;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 0px;
+}
+
+.grounded-radiants::after {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  left: -3px;
+  right: -3px;
+  background: linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  content: "";
+  z-index: -1;
+  border-radius: 30px;
+  height: 48px;
+  min-width: 125px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2b2b2b;
+  font-family: Mulish;
+  cursor: pointer;
+}
+
+.component-center {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-paper {
+  width: 926px;
+  height: 528px;
+  padding: 20px 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 54px rgba(76, 115, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.component-form {
+  align-self: flex-start;
+  height: 500px;
+}
+
+.component-header {
+  color: #2b2b2b;
+  font-family: "Mulish", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 113.5%;
+  margin-bottom: 10px;
+}
+
+.component-title {
+  font-family: "Mulish", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 145.5%;
+  color: #666666;
+}
+
+.component-title span {
+  background-image: linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  background-size: 100%;
+  /* -moz-background-clip: text; */
+  -webkit-text-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.image-create-account {
+  width: 100%;
+}
+
+.box-two {
+  margin-top: 40px;
+  max-width: 720px;
+  min-height: 250px;
+  border: double 4px transparent;
+  border-radius: 30px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(97.42deg, #4c73ff 0%, #ff4cd8 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  padding: 30px;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  color: "#666666";
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 850px) {
+  .component-image {
+    display: none;
+  }
+
+  .box-two {
+    min-width: 0;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .component-image {
+    display: none;
+  }
+  .grounded-radiants {
+    font-size: 12px;
+    padding: 14px 22px;
+  }
+  .box-two {
+    min-width: 0;
+    width: 100%;
+    padding: 5px;
+    margin-top: 0px;
+  }
+  .component-paper {
+    width: 100%;
+  }
+  .component-form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .hidelines {
+    display: "none";
+  }
+}
