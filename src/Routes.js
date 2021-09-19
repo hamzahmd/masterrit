@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 import { createBrowserHistory } from "history";
@@ -35,7 +35,7 @@ export default function Routes() {
         <Route exact path="/signup" component={AccountCreation} />
         <Route exact path="/signin" component={AccountLogin} />
       </Switch>
-      {/* </Suspense> */}
+
       <Footer />
     </Router>
   );

@@ -25,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     display: "none",
     padding: "0 20px",
+    color: "inherit",
+    textDecoration: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
@@ -106,10 +108,10 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      <MenuItem component={Link} to="/notifications">
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem component={Link} to="/card" onClick={handleProfileMenuOpen}>
         <p>Card</p>
       </MenuItem>
     </Menu>
@@ -131,13 +133,31 @@ export default function PrimarySearchAppBar() {
             >
               <img src={Logo} />
             </IconButton>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography
+              className={classes.title}
+              variant="h6"
+              noWrap
+              component={Link}
+              to="/testimonials"
+            >
               Testimonials
             </Typography>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography
+              className={classes.title}
+              variant="h6"
+              noWrap
+              component={Link}
+              to="/community"
+            >
               Community
             </Typography>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography
+              className={classes.title}
+              variant="h6"
+              noWrap
+              component={Link}
+              to="/card"
+            >
               Card
             </Typography>
           </div>

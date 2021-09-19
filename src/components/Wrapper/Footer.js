@@ -146,12 +146,7 @@ const ChildComponentB = () => {
       </ul>
       <ul className={classes.childBlist2}>
         <li className={classes.ten}>Contact Us</li>
-        <li style={{ paddingBottom: "10px" }}>
-          <span style={{ marginRight: "8px" }}>
-            <img src={phone} alt="phone" />
-          </span>
-          <span>+ 123 1412 112 42</span>
-        </li>
+
         <li style={{ paddingBottom: "10px" }}>
           <span style={{ marginRight: "8px" }}>
             <img src={mail} alt="mail" />
