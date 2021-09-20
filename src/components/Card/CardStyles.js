@@ -28,6 +28,12 @@ export const useStyles = makeStyles((theme) => ({
   gridContainer: {
     display: "flex",
     justifyContent: "center",
+    marginBottom: "96px",
+  },
+  cardContainer: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "150px",
   },
 
   headerPay: {
@@ -70,6 +76,12 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
+  payCard: {
+    width: "67.5%",
+    display: "flex",
+    flexDirection: "column",
+    paddingRight: "3rem",
+  },
   gridPay: {
     // height: "50vh",
     width: "100%",
@@ -81,5 +93,13 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "2rem",
     display: "flex",
     justifyContent: "center",
+  },
+  imageSafe: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  secureText: {
+    display: "flex",
+    alignItems: "center",
   },
 }));

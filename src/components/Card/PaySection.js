@@ -10,7 +10,6 @@ const PaySection = () => {
       <Typography component="div" className={classes.topheader}>
         ONE TAP TO <span className={classes.tophighlight}> PAY</span>
       </Typography>
-
       <Grid containter className={classes.gridContainer}>
         <Grid item md={6} className={classes.gridPay}>
           <Box className={classes.payFreely}>

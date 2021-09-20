@@ -38,7 +38,7 @@ export default function Routes() {
         <Route exact path="/card" component={CardPage} />
       </Switch>
 
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }
