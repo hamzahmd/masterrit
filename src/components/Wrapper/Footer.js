@@ -3,7 +3,7 @@ import GridComponent from "../../utilities/GridComponent";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from "../../assets/images/logo.png";
 import footerTextLogo from "../../assets/images/footerText.png";
-import phone from "../../assets/images/phone.png";
+
 import map from "../../assets/images/map.png";
 import mail from "../../assets/images/mail.png";
 import { Link } from "react-router-dom";

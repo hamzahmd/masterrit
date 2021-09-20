@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    height: "100px",
     [theme.breakpoints.only("xs")]: {
       flexGrow: 0,
     },
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   removeSmall: {
+    marginRight: "40px",
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
@@ -50,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   sectionDesktop: {
+    // marginLeft: "20px",
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "flex",

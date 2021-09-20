@@ -8,6 +8,7 @@ import AccountCreation from "./pages/AccountCreation";
 import AccountLogin from "./pages/AccountLogin.js";
 import Navbar from "./components/Wrapper/Navbar.js";
 import Footer from "./components/Wrapper/Footer.js";
+import CardPage from "./pages/CardPage.js";
 
 export const PrivateRoute = ({ component: Component, roles, ...rest }) => (
   <Route
@@ -34,9 +35,10 @@ export default function Routes() {
         <Route exact path="/about" component={AboutPage} />
         <Route exact path="/signup" component={AccountCreation} />
         <Route exact path="/signin" component={AccountLogin} />
+        <Route exact path="/card" component={CardPage} />
       </Switch>
 
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
