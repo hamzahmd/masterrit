@@ -92,8 +92,8 @@ const useStyles = makeStyles((theme) => ({
   },
   headerController: {
     [theme.breakpoints.down("sm")]: {
-      marginBottom: "50px",
-      marginTop: "50px",
+      marginBottom: "60px",
+      marginTop: "25px",
       zIndex: 1000,
     },
   },

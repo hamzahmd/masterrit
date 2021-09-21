@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100px",
     [theme.breakpoints.only("xs")]: {
       flexGrow: 0,
+      height: "60px",
+      marginTop: "10px",
     },
   },
   menuButton: {
@@ -69,6 +71,21 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
+  },
+  logoImg: {
+    [theme.breakpoints.down("sm")]: {
+      width: "70%",
+    },
+  },
+  logoContainer: {
+    [theme.breakpoints.down("sm")]: {
+      padding: "0",
+    },
+  },
+  drawMenuBtn: {
+    padding: "15px 26px",
+    borderRadius: "20px",
+    background: "rgba(0, 0, 0, 0.05)",
   },
 }));
 
@@ -176,20 +193,22 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
+              aria-label="show 4 new mails"
+              color="inherit"
+              onClick={() => history.push("/")}
+              className={classes.logoContainer}
+            >
+              <img src={Logo} className={classes.logoImg} />
+            </IconButton>
+            <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
+              className={classes.drawMenuBtn}
             >
-              <img src={DrawerIcon} />
-            </IconButton>
-            <IconButton
-              aria-label="show 4 new mails"
-              color="inherit"
-              onClick={() => history.push("/")}
-            >
-              <img src={Logo} />
+              <img src={DrawerIcon} alt="drawer" />
             </IconButton>
           </div>
         </Toolbar>

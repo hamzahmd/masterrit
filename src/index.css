@@ -3,6 +3,7 @@
 }
 
 body {
+  max-width: 1350px;
   width: 100vw;
   overflow-x: hidden;
   margin: 0;
