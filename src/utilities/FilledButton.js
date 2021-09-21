@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FilledButton = ({ buttonText, buttonFn, type, disabled }) => {
+const FilledButton = ({ buttonText, buttonFn, type, disabled, width }) => {
   const classes = useStyles();
 
   return type === "submit" ? (
@@ -50,6 +50,7 @@ const FilledButton = ({ buttonText, buttonFn, type, disabled }) => {
       className={disabled ? classes.buttonDisabled : classes.button}
       disabled={disabled}
       type="submit"
+      style={{ width: `${width}` }}
     >
       {buttonText}
     </button>
@@ -59,6 +60,7 @@ const FilledButton = ({ buttonText, buttonFn, type, disabled }) => {
       onClick={buttonFn}
       disabled={disabled}
       type="button"
+      style={{ width: `${width}` }}
     >
       {buttonText}
     </button>

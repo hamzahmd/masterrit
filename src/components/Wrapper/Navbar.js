@@ -1,96 +1,26 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import DrawerIcon from "../../assets/images/drawer.png";
-import Logo from "../../assets/images/logo.png";
-import FilledButton from "../../utilities/FilledButton";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-    height: "100px",
-    [theme.breakpoints.only("xs")]: {
-      flexGrow: 0,
-      height: "60px",
-      marginTop: "10px",
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: "none",
-    padding: "0 20px",
-    color: "inherit",
-    textDecoration: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-  removeSmall: {
-    marginRight: "40px",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-  sectionDesktop: {
-    // marginLeft: "20px",
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "flex",
-      alignItems: "center",
-    },
-    // [theme.breakpoints.down('sm')]: {
-    //     display: 'none'
-    //   },
-  },
-  sectionMobile: {
-    display: "flex",
-    flexGrow: 2,
-    justifyContent: "space-between",
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
-  logoImg: {
-    [theme.breakpoints.down("sm")]: {
-      width: "70%",
-    },
-  },
-  logoContainer: {
-    [theme.breakpoints.down("sm")]: {
-      padding: "0",
-    },
-  },
-  drawMenuBtn: {
-    padding: "15px 26px",
-    borderRadius: "20px",
-    background: "rgba(0, 0, 0, 0.05)",
-  },
-}));
+import DrawerIcon from "../../assets/images/drawer.png";
+import CrossIcon from "../../assets/images/cross.png";
+import LineNav from "../../assets/images/HomeIndicator.png";
+import Logo from "../../assets/images/logo.png";
+import FilledButton from "../../utilities/FilledButton";
+import { useStyles } from "./NavbarStyles";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  MenuItem,
+  Menu,
+  Box,
+} from "@material-ui/core";
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
+  const [click, setClick] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const history = useHistory();
@@ -104,6 +34,7 @@ export default function PrimarySearchAppBar() {
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
+    setClick(!click);
   };
 
   const handleMenuClose = () => {
@@ -113,6 +44,7 @@ export default function PrimarySearchAppBar() {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+    setClick(!click);
   };
 
   const menuId = "primary-search-account-menu";
@@ -120,6 +52,7 @@ export default function PrimarySearchAppBar() {
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
+      elevation={0}
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{ vertical: "top", horizontal: "left" }}
       id={mobileMenuId}
@@ -127,13 +60,42 @@ export default function PrimarySearchAppBar() {
       transformOrigin={{ vertical: "top", horizontal: "left" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      className={classes.navMenu}
     >
-      <MenuItem component={Link} to="/notifications">
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem component={Link} to="/card" onClick={handleProfileMenuOpen}>
-        <p>Card</p>
-      </MenuItem>
+      <Box className={classes.navMenuDrawer}>
+        <MenuItem component={Link} to="/about">
+          <p className={classes.navLink}>About Us</p>
+        </MenuItem>
+        <MenuItem component={Link} to="/">
+          <p className={classes.navLink}>Testimonials</p>
+        </MenuItem>
+        <MenuItem component={Link} to="/">
+          <p className={classes.navLink}>Community</p>
+        </MenuItem>
+        <MenuItem component={Link} to="/card" onClick={handleProfileMenuOpen}>
+          <p className={classes.navLink}>Card</p>
+        </MenuItem>
+        <MenuItem component={Link} to="/">
+          <p className={classes.navLink}>Community</p>
+        </MenuItem>
+        <MenuItem component={Link} to="/">
+          <p className={classes.navLink}>Privacy Policy</p>
+        </MenuItem>
+        <MenuItem component={Link} to="/">
+          <p className={classes.navLink}>Terms & Conditions</p>
+        </MenuItem>
+        <Box className={classes.starterBtn}>
+          <FilledButton
+            buttonText={"Get Started"}
+            buttonFn={() => history.push("/signup")}
+            width={"300px"}
+          />
+          <Link className={classes.loginNav} to="/signin">
+            Login to existing profile
+          </Link>
+          <img src={LineNav} alt="lineNav" />
+        </Box>
+      </Box>
     </Menu>
   );
 
@@ -208,7 +170,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
               className={classes.drawMenuBtn}
             >
-              <img src={DrawerIcon} alt="drawer" />
+              <img src={click ? CrossIcon : DrawerIcon} alt="drawer" />
             </IconButton>
           </div>
         </Toolbar>
