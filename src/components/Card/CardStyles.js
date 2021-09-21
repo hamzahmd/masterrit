@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme) => ({
   gridContainer: {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "96px",
+    marginBottom: "80px",
   },
   cardContainer: {
     display: "flex",
@@ -101,5 +101,11 @@ export const useStyles = makeStyles((theme) => ({
   secureText: {
     display: "flex",
     alignItems: "center",
+  },
+  boxBtn: {
+    display: "flex",
+    width: " 100%",
+    justifyContent: "center",
+    marginBottom: "80px",
   },
 }));

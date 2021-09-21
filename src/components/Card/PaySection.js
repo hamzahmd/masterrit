@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { useStyles } from "./CardStyles";
-import { Typography, Grid, Box } from "@material-ui/core";
+import { Typography, Grid, Box, Button } from "@material-ui/core";
+import UnFilledButton from "../../utilities/UnFilledButton";
 import womanBitcoin from "../../assets/images/womanbitcoin.png";
 
 const PaySection = () => {
@@ -34,6 +35,9 @@ const PaySection = () => {
           </Box>
         </Grid>
       </Grid>
+      <Box className={classes.boxBtn}>
+        <UnFilledButton width={"370px"} buttonText={"Coming Soon"} />
+      </Box>
     </Fragment>
   );
 };
