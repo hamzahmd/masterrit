@@ -11,6 +11,9 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "36px",
     lineHeight: "120px",
     [theme.breakpoints.down("sm")]: {
+      marginTop: "20px",
+      paddingLeft: "10px",
+      height: "60px",
       fontSize: "26px",
       lineHeight: "32px",
       textAlign: "left",
@@ -29,11 +32,19 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     marginBottom: "80px",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      marginBottom: "20px",
+    },
   },
   cardContainer: {
     display: "flex",
     justifyContent: "center",
     marginBottom: "150px",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      marginBottom: "20px",
+    },
   },
 
   headerPay: {
@@ -75,12 +86,21 @@ export const useStyles = makeStyles((theme) => ({
     width: "67.5%",
     display: "flex",
     flexDirection: "column",
+    [theme.breakpoints.down("sm")]: {
+      margin: "0 10px",
+      width: "100%",
+    },
   },
   payCard: {
     width: "67.5%",
     display: "flex",
     flexDirection: "column",
     paddingRight: "3rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: "10px",
+      width: "100%",
+      paddingRight: "0",
+    },
   },
   gridPay: {
     // height: "50vh",
@@ -88,15 +108,24 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "flex-start",
+    },
   },
   imagePay: {
     marginRight: "2rem",
     display: "flex",
     justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "0",
+    },
   },
   imageSafe: {
     display: "flex",
     justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "20px",
+    },
   },
   secureText: {
     display: "flex",
@@ -107,5 +136,28 @@ export const useStyles = makeStyles((theme) => ({
     width: " 100%",
     justifyContent: "center",
     marginBottom: "80px",
+    [theme.breakpoints.down("sm")]: {
+      width: " 85%",
+      margin: "40px 20px",
+    },
+  },
+
+  secureContainer: {
+    marginBottom: "180px",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "40px",
+    },
+  },
+
+  cardImg: {
+    [theme.breakpoints.down("sm")]: {
+      width: "50%",
+    },
+  },
+  creditcardImg: {
+    width: "100%",
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));

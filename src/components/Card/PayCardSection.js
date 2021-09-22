@@ -7,7 +7,7 @@ const PayCardSection = () => {
   const classes = useStyles();
   return (
     <Grid containter className={classes.cardContainer}>
-      <Grid item md={6} className={classes.gridPay}>
+      <Grid item md={6} sm={12} xs={12} className={classes.gridPay}>
         <Box className={classes.payCard}>
           <Typography variant="div" className={classes.headerPay}>
             MASTERRIT <span className={classes.highlightPay}>PAY CARD</span>
@@ -23,9 +23,9 @@ const PayCardSection = () => {
           </Typography>
         </Box>
       </Grid>
-      <Grid item md={6}>
-        <Box>
-          <img src={creditcard} alt="creditcard" />
+      <Grid item md={6} sm={12} xs={12}>
+        <Box className={classes.creditcardImg}>
+          <img src={creditcard} alt="creditcard" className={classes.cardImg} />
         </Box>
       </Grid>
     </Grid>

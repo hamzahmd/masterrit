@@ -12,7 +12,7 @@ const PaySection = () => {
         ONE TAP TO <span className={classes.tophighlight}> PAY</span>
       </Typography>
       <Grid containter className={classes.gridContainer}>
-        <Grid item md={6} className={classes.gridPay}>
+        <Grid item md={6} sm={12} xs={12} className={classes.gridPay}>
           <Box className={classes.payFreely}>
             <Typography variant="div" className={classes.headerPay}>
               PAY <span className={classes.highlightPay}>FREELY</span>
@@ -29,9 +29,13 @@ const PaySection = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} sm={12} xs={12}>
           <Box className={classes.imagePay}>
-            <img src={womanBitcoin} alt="womanbitcoin" />
+            <img
+              src={womanBitcoin}
+              alt="womanbitcoin"
+              className={classes.cardImg}
+            />
           </Box>
         </Grid>
       </Grid>
